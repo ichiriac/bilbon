@@ -1,7 +1,7 @@
 <?php
 namespace bilbon {
     class Gandalf {
-        public static $instances = array();
+        public static $instances = array('default' => array());
         public static function get( $name ) {
             if ( !isset(self::$instances[$name]) ) throw new \OutOfBoundsException($name);
             return ( ($conf = self::$instances[$name]) instanceof \PDO ) ?
